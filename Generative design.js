@@ -39,6 +39,17 @@ function drawLeftR() {
 	context.fillRect(width / 4, height / 2, width / 4, height / 4);
 }
 
+drawCrest();
+function drawCrest() {
+	context.fillStyle = "black";
+	Utils.fillCircle(width / 2, height / 2, height / 6);
+}
+
+drawBelt();
+function drawBelt() {
+	context.fillStyle = "#edbc00";
+	context.fillRect(width / 4, height / 2, width / 2, 50);
+}
 //	context.fillStyle = Utils.hsl(Math.random() * 350, 50, 50);
 //Utils.fillCircle(width / 2, height / 2, 325);
 
