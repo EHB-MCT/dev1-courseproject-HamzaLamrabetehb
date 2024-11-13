@@ -10,6 +10,9 @@ drawGenerative();
 function drawGenerative() {
 	context.fillRect(0, 0, width, height);
 
+	context.fillStyle = "#edbc00";
+	context.fillRect(width / 4.5, height / 4.5, width / 1.8, height / 1.8);
+
 	context.fillStyle = "green";
 	context.fillRect(width / 4, height / 4, width / 2, height / 2);
 }
@@ -20,10 +23,22 @@ function drawBubbles() {
 		let x = width / 4 + Math.random() * (width * 0.5);
 		let y = height / 4 + (Math.random() * height) / 4;
 		//let y = height / 4 - Math.random() * (height / 2);
-		context.fillStyle = Utils.hsl(Math.random() * 100, 50, 50);
+		context.fillStyle = Utils.hsl(1, Math.random() * 100, Math.random() * 100);
 		Utils.fillCircle(x, y, Math.random() * 5);
 	}
 }
+
+drawRightR();
+function drawRightR() {
+	context.fillStyle = "#004e98";
+	context.fillRect(width / 2, height / 2, width / 4, height / 4);
+}
+drawLeftR();
+function drawLeftR() {
+	context.fillStyle = "#a50044";
+	context.fillRect(width / 4, height / 2, width / 4, height / 4);
+}
+
 //	context.fillStyle = Utils.hsl(Math.random() * 350, 50, 50);
 //Utils.fillCircle(width / 2, height / 2, 325);
 
