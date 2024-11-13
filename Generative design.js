@@ -8,62 +8,62 @@ let height = context.canvas.height;
 drawGenerative();
 
 function drawGenerative() {
+	//serve to draw a black background
 	context.fillRect(0, 0, width, height);
-
+	//serve Yellowish outline
 	context.fillStyle = "#edbc00";
 	context.fillRect(width / 4.5, height / 4.5, width / 1.8, height / 1.8);
-
-	context.fillStyle = "green";
+	//serve to draw the background inside the upper area of the square
+	context.fillStyle = "white";
 	context.fillRect(width / 4, height / 4, width / 2, height / 2);
 }
-
+//following code serve to draw different circles of different size, all of different shades of Red. their position is randomised but only on the upper area of the rectangle.
 drawBubbles();
 function drawBubbles() {
 	for (let i = 0; i < 100; i++) {
 		let x = width / 4 + Math.random() * (width * 0.5);
 		let y = height / 4 + (Math.random() * height) / 4;
 		//let y = height / 4 - Math.random() * (height / 2);
-		context.fillStyle = Utils.hsl(1, Math.random() * 100, Math.random() * 100);
-		Utils.fillCircle(x, y, Math.random() * 5);
+		context.fillStyle = Utils.hsl(
+			Math.random() * 10,
+			Math.random() * 100,
+			Math.random() * 100
+		);
+		Utils.fillCircle(x, y, Math.random() * 10);
 	}
 }
 
+//Serve to draw the right/lower part of the whole design, the color are randomised between dark blue and violet/magenta
 drawRightR();
 function drawRightR() {
-	context.fillStyle = "#004e98";
+	context.fillStyle = Utils.hsl(209 + Math.random() * 100, 100, 30);
 	context.fillRect(width / 2, height / 2, width / 4, height / 4);
 }
+
+//Serve to draw the left/lower part of the design, the color are randomised of dark red
 drawLeftR();
 function drawLeftR() {
-	context.fillStyle = "#a50044";
+	context.fillStyle = Utils.hsl(
+		(335 + Math.random()) / 100,
+		Math.random() * 100,
+		32
+	);
 	context.fillRect(width / 4, height / 2, width / 4, height / 4);
 }
 
+//Serve to draw the black circle in the middle of the design
 drawCrest();
 function drawCrest() {
 	context.fillStyle = "black";
 	Utils.fillCircle(width / 2, height / 2, height / 6);
 }
-
+//serve to draw a rectangle that goes over the whole design
 drawBelt();
 function drawBelt() {
-	context.fillStyle = "#edbc00";
-	context.fillRect(width / 4, height / 2, width / 2, 50);
+	context.fillStyle = Utils.hsl(
+		48 + Math.random() * 20,
+		Math.random() * 50,
+		50
+	);
+	context.fillRect(width / 4.5, height / 2, width / 1.8, 50);
 }
-//	context.fillStyle = Utils.hsl(Math.random() * 350, 50, 50);
-//Utils.fillCircle(width / 2, height / 2, 325);
-
-//context.fillStyle = "#a62d3c";
-//Utils.fillCircle(width / 2, height / 2, 300);
-
-//for (let i = 0; i < 10000; i++) {
-//	let x = Math.random() * width;
-//	let y = Math.random() * height;
-
-//	let distance = Utils.calculateDistance(width / 2, height / 2, x, y);
-//	if (distance < 300) {
-//		context.fillStyle = "green";
-//	} else if (distance > 300) {
-//		context.fillStyle = "red";
-//	}
-//	Utils.fillCircle(0, 0, width, height);
