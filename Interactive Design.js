@@ -50,20 +50,3 @@ function drawLeftR() {
 	);
 	context.fillRect(width / 4, height / 2, width / 4, height / 4);
 }
-
-//Serve to draw the black circle in the middle of the design
-drawCrest();
-function drawCrest() {
-	context.fillStyle = "black";
-	Utils.fillCircle(width / 2, height / 2, height / 6);
-}
-//serve to draw a rectangle that goes over the whole design
-drawBelt();
-function drawBelt() {
-	context.fillStyle = Utils.hsl(
-		48 + Math.random() * 20,
-		Math.random() * 50,
-		50
-	);
-	context.fillRect(width / 4.5, height / 2, width / 1.8, 50);
-}
